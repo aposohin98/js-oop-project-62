@@ -8,8 +8,8 @@ const checksMap = {
 };
 
 export class ArrayValidator extends BaseValidator {
-  constructor() {
-    super();
+  constructor(customValidators) {
+    super('array', customValidators);
 
     this.checks.push(checksMap.array);
   }

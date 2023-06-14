@@ -9,8 +9,8 @@ const checksMap = {
 };
 
 export class StringValidator extends BaseValidator {
-  constructor() {
-    super();
+  constructor(customValidators) {
+    super('string', customValidators);
 
     this.checks.push(checksMap.string);
   }

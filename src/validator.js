@@ -4,23 +4,29 @@ import { ArrayValidator } from './validators/ArrayValidator.js';
 import { ObjectValidator } from './validators/ObjectValidator.js';
 
 export class Validator {
+  customValidators = [];
+
+  addValidator(type, customName, validator) {
+    this.customValidators.push({ type, customName, validator });
+  }
+
   // eslint-disable-next-line class-methods-use-this
   string() {
-    return new StringValidator();
+    return new StringValidator(this.customValidators);
   }
 
   // eslint-disable-next-line class-methods-use-this
   number() {
-    return new NumberValidator();
+    return new NumberValidator(this.customValidators);
   }
 
   // eslint-disable-next-line class-methods-use-this
   array() {
-    return new ArrayValidator();
+    return new ArrayValidator(this.customValidators);
   }
 
   // eslint-disable-next-line class-methods-use-this
   object() {
-    return new ObjectValidator();
+    return new ObjectValidator(this.customValidators);
   }
 }

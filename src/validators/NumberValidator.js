@@ -10,8 +10,8 @@ const checksMap = {
 };
 
 export class NumberValidator extends BaseValidator {
-  constructor() {
-    super();
+  constructor(customValidators) {
+    super('number', customValidators);
 
     this.checks.push(checksMap.number);
   }

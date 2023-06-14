@@ -16,8 +16,8 @@ const checksMap = {
 };
 
 export class ObjectValidator extends BaseValidator {
-  constructor() {
-    super();
+  constructor(customValidators) {
+    super('object', customValidators);
 
     this.checks.push(checksMap.object);
   }
