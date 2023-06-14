@@ -10,13 +10,13 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   rules: {
-    'import/prefer-default-export': "off",
+    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
       {
-        js: 'always'
-      }
-    ]
+        js: 'always',
+      },
+    ],
   },
 };
