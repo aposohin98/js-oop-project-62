@@ -5,7 +5,7 @@ import { BaseValidator } from './BaseValidator.js';
 const checksMap = {
   number: (value) => isNumber(value) || isNullOrUndefined(value),
   required: (value) => isNumber(value),
-  positive: (value) => value > 0,
+  positive: (value) => value > 0 || isNullOrUndefined(value),
   range: (from, to) => (value) => value >= from && value <= to,
 };
 
