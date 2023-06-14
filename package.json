@@ -1,0 +1,30 @@
+{
+  "name": "js-oop-project-62",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/aposohin98/js-oop-project-62/workflows/hexlet-check/badge.svg)](https://github.com/aposohin98/js-oop-project-62/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aposohin98/js-oop-project-62.git"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aposohin98/js-oop-project-62/issues"
+  },
+  "homepage": "https://github.com/aposohin98/js-oop-project-62#readme",
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.5.0"
+  },
+  "dependencies": {}
+}
