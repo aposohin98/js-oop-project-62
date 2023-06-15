@@ -1,4 +1,4 @@
-import { Validator } from '../../validator.js';
+import Validator from '../../validator.js';
 
 describe('Тестируем NumberValidator', () => {
   describe('number', () => {

@@ -1,4 +1,4 @@
-export class BaseValidator {
+class BaseValidator {
   constructor(type, customValidators = []) {
     this.type = type;
     this.checks = [];
@@ -17,3 +17,5 @@ export class BaseValidator {
     return this;
   }
 }
+
+export default BaseValidator;

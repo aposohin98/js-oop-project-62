@@ -1,10 +1,12 @@
-import { NumberValidator } from './validators/NumberValidator.js';
-import { StringValidator } from './validators/StringValidator.js';
-import { ArrayValidator } from './validators/ArrayValidator.js';
-import { ObjectValidator } from './validators/ObjectValidator.js';
+import NumberValidator from './validators/NumberValidator.js';
+import StringValidator from './validators/StringValidator.js';
+import ArrayValidator from './validators/ArrayValidator.js';
+import ObjectValidator from './validators/ObjectValidator.js';
 
-export class Validator {
-  customValidators = [];
+class Validator {
+  constructor() {
+    this.customValidators = [];
+  }
 
   addValidator(type, customName, validator) {
     this.customValidators.push({ type, customName, validator });
@@ -30,3 +32,5 @@ export class Validator {
     return new ObjectValidator(this.customValidators);
   }
 }
+
+export default Validator;

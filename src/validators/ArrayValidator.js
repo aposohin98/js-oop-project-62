@@ -1,5 +1,5 @@
-import { isNullOrUndefined } from '../utils/isNullOrUndefined.js';
-import { BaseValidator } from './BaseValidator.js';
+import isNullOrUndefined from '../utils/isNullOrUndefined.js';
+import BaseValidator from './BaseValidator.js';
 
 const checksMap = {
   array: (value) => Array.isArray(value) || isNullOrUndefined(value),
@@ -7,7 +7,7 @@ const checksMap = {
   sizeof: (length) => (arr) => arr.length === length,
 };
 
-export class ArrayValidator extends BaseValidator {
+class ArrayValidator extends BaseValidator {
   constructor(customValidators) {
     super('array', customValidators);
 
@@ -26,3 +26,5 @@ export class ArrayValidator extends BaseValidator {
     return this;
   }
 }
+
+export default ArrayValidator;

@@ -1,4 +1,4 @@
-import { Validator } from '../../validator.js';
+import Validator from '../../validator.js';
 
 describe('Тестируем ObjectValidator', () => {
   describe('shape', () => {
@@ -40,6 +40,13 @@ describe('Тестируем ObjectValidator', () => {
       });
 
       expect(schema.isValid({ name: 'ada', age: -5 })).toBe(false);
+    });
+
+    it('Пример #5', () => {
+      const v = new Validator();
+      const schema = v.object();
+
+      expect(schema.isValid(null)).toBe(true);
     });
   });
 });

@@ -1,8 +1,8 @@
-import { BaseValidator } from './BaseValidator.js';
-import { isObject } from '../utils/isObject.js';
+import BaseValidator from './BaseValidator.js';
+import isObject from '../utils/isObject.js';
 
 const checksMap = {
-  object: (value) => isObject(value),
+  object: (value) => isObject(value) || value === null,
   shape: (schema) => (object) => {
     const keys = Object.keys(schema);
 
@@ -15,7 +15,7 @@ const checksMap = {
   },
 };
 
-export class ObjectValidator extends BaseValidator {
+class ObjectValidator extends BaseValidator {
   constructor(customValidators) {
     super('object', customValidators);
 
@@ -28,3 +28,5 @@ export class ObjectValidator extends BaseValidator {
     return this;
   }
 }
+
+export default ObjectValidator;

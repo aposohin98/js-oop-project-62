@@ -1,6 +1,6 @@
-import { isNullOrUndefined } from '../utils/isNullOrUndefined.js';
-import { isNumber } from '../utils/isNumber.js';
-import { BaseValidator } from './BaseValidator.js';
+import isNullOrUndefined from '../utils/isNullOrUndefined.js';
+import isNumber from '../utils/isNumber.js';
+import BaseValidator from './BaseValidator.js';
 
 const checksMap = {
   number: (value) => isNumber(value) || isNullOrUndefined(value),
@@ -9,7 +9,7 @@ const checksMap = {
   range: (from, to) => (value) => value >= from && value <= to,
 };
 
-export class NumberValidator extends BaseValidator {
+class NumberValidator extends BaseValidator {
   constructor(customValidators) {
     super('number', customValidators);
 
@@ -34,3 +34,5 @@ export class NumberValidator extends BaseValidator {
     return this;
   }
 }
+
+export default NumberValidator;

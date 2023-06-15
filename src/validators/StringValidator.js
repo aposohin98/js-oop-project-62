@@ -1,6 +1,6 @@
-import { isNullOrUndefined } from '../utils/isNullOrUndefined.js';
-import { isString } from '../utils/isString.js';
-import { BaseValidator } from './BaseValidator.js';
+import isNullOrUndefined from '../utils/isNullOrUndefined.js';
+import isString from '../utils/isString.js';
+import BaseValidator from './BaseValidator.js';
 
 const checksMap = {
   string: (value) => isString(value) || isNullOrUndefined(value),
@@ -8,7 +8,7 @@ const checksMap = {
   contains: (text) => (value) => value.includes(text),
 };
 
-export class StringValidator extends BaseValidator {
+class StringValidator extends BaseValidator {
   constructor(customValidators) {
     super('string', customValidators);
 
@@ -27,3 +27,5 @@ export class StringValidator extends BaseValidator {
     return this;
   }
 }
+
+export default StringValidator;
